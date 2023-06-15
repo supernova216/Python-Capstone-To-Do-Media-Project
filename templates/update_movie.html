@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="../static/movies.css">
+{% extends "base.html" %}
+{% block main %}
+<div class="form-container">
+    <h3>Update Movie</h3>
+    <form action="{{ url_for('update_movie', movie_id = movie.movie_id) }}" method="POST">
+        {{ form.csrf_token() }}
+        <div class="form-group mt-2">
+            {{ form.movie_title.label }}
+            {{ form.movie_title(value = movie.movie_title, class = "form-control") }}
+        </div>
+        <div class="form-group mt-2">
+            {{ form.submit(type="submit", class="btn btn-primary") }}
+        </div>  
+    </form>
+</div>
+{% endblock %}

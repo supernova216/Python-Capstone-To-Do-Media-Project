@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="../static/homepage.css">
+{% extends 'base.html' %}
+{% block title %}User Home {% endblock %}
+
+{% block body %}
+    <h1>Welcome!</h1>
+
+    <h1>Please log in to create or view your media to-do list</h1>
+
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href = "/movies">View/change movies</a></li>
+        <li><a href = "/books">View/change books</a></li>
+        <li><a href = "/games">View/change games</a></li>
+    </ul>
+
+    <h2>Create an Account</h2>
+    <form action="/users" method = "POST">
+        <p>
+            Email <input type = "text" name = "email">
+        </p>
+        <p>
+            Password <input type = "password" name = "password">
+        </p>
+        <p>
+            <input type = "submit">
+        </p>
+
+    </form>
+
+    <h2>Log in</h2>
+    <form action="/login" method = "POST">
+        <p>
+            Email <input type = "text" name = "email">
+        </p>
+        <p>
+            Password <input type = "password" name = "password">
+        </p>
+        <p>
+            <input type = "submit">
+        </p>
+    </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="../static/books.css">
+{% extends "base.html" %}
+{% block main %}
+<div class="form-container">
+    <h3>Update Book</h3>
+    <form action="{{ url_for('update_book', book_id = book.book_id) }}" method="POST">
+        {{ form.csrf_token() }}
+        <div class="form-group mt-2">
+            {{ form.book_title.label }}
+            {{ form.book_title(value = book.book_title, class = "form-control") }}
+        </div>
+        <div class="form-group mt-2">
+            {{ form.submit(type="submit", class="btn btn-primary") }}
+        </div>  
+    </form>
+</div>
+{% endblock %}
